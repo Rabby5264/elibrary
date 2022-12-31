@@ -4,6 +4,7 @@ $sql    ="SELECT * FROM home_slider ORDER BY id DESC";
 $result =$db->query($sql);
 ?>
 
+
     <div class="col-lg-10 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
@@ -41,6 +42,14 @@ $result =$db->query($sql);
                       </tbody>
                     </table>
                     <br>
+
+
+
+<?php  
+include "connection.php"; 
+$sql    ="SELECT * FROM about ORDER BY id DESC";
+$result =$db->query($sql);
+?>                 
                     <p class="card-description"> Home <code> About </code>
                     </p>
                     <table class="table table-hover">
@@ -51,13 +60,14 @@ $result =$db->query($sql);
                           <th>Status</th>
                         </tr>
                       </thead>
+                      <?php while($row = $result->fetch_assoc()):   ?>
                       <tbody>
                         <tr>
-                          <td>Ja</td>
-                          <td>Photoshop</td>
+                          <td><?php echo $row['text']  ;  ?></td>
+                          <td><img src="<?php echo"images/slider/" .$row['image']  ;  ?>" width="90px" alt="image"></td>
                           <td><a href="edit_about.php"><label class="badge badge-danger">Edit</label></a></td>
                         </tr>
-                       
+                        <?php endwhile; ?>
                       </tbody>
                     </table>
                   </div>

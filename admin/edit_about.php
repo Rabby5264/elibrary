@@ -7,20 +7,14 @@
                     <h4 class="card-title">About</h4>
                     <p class="card-description"> About <code>Edit</code></p> 
 
-                    <form class="forms-sample">
-                      <div class="form-group">
-                        <label>Image upload</label>
-                        <input type="file" name="img[]" class="file-upload-default">
-                        <div class="input-group col-xs-12">
-                          <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image">
-                          <span class="input-group-append">
-                            <button class="file-upload-browse btn btn-gradient-primary" type="button">Upload</button>
-                          </span>
-                        </div>
+                    <form class="forms-sample" method="POST" action="about_insert.php" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="exampleInputName1">Text</label>
+                        <input type="text" name="text" class="form-control" id="exampleInputName1" placeholder="Enter Descripption">
                       </div>
                       <div class="form-group">
-                        <label for="exampleTextarea1">Details</label>
-                        <textarea class="form-control" id="exampleTextarea1" rows="4"></textarea>
+                        <label>Image upload</label>
+                        <input type="file" name="image" class="form-control" id="exampleInputName1" placeholder="file">
                       </div>
                       <button type="submit" class="btn btn-gradient-primary me-2">Submit</button>
                       <button class="btn btn-light">Cancel</button>

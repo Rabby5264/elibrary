@@ -3,8 +3,8 @@
         <div class="col-md-10 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">Horizontal Form</h4>
-                    <p class="card-description"> Horizontal form layout </p>
+                    <h4 class="card-title">Admin Registration Form</h4>
+                    <p class="card-description"> New Member </p>
                     <form class="forms-sample" method="POST" action="registration_insert.php">
                       <div class="form-group row">
                         <label for="exampleInputUsername2" class="col-sm-3 col-form-label">Name</label>
