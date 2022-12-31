@@ -1,4 +1,11 @@
-<?php include 'include/header.php' ?>
+<?php 
+  session_start();
+  if($_SESSION['id']):
+  include "connection.php"; 
+include 'include/header.php' 
+
+
+?>
 
         <!-- partial -->
         <div class="main-panel">
@@ -325,4 +332,10 @@
           <!-- content-wrapper ends -->
          
 
-          <?php include 'include/footer.php' ?>
+<?php
+include 'include/footer.php' ;
+else:
+  header("Location:login.php");
+
+endif;
+ ?>
