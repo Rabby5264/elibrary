@@ -1,4 +1,8 @@
-<?php include 'include/header.php'; ?>
+<?php include 'include/header.php'; 
+include "connection.php"; 
+$sql    ="SELECT * FROM home_slider ORDER BY id DESC";
+$result =$db->query($sql);
+?>
 
     <div class="col-lg-10 grid-margin stretch-card">
                 <div class="card">
@@ -22,17 +26,18 @@
                           <th>Status</th>
                         </tr>
                       </thead>
+                      <?php while($row = $result->fetch_assoc()):   ?>
                       <tbody>
                         <tr>
-                          <td>Jacob</td>
-                          <td>Jacob</td>
-                          <td>Jacob</td>
-                          <td>Jacob</td>
-                          <td>Photoshop</td>
+                          <td><?php echo $row['id']  ;  ?></td>
+                          <td><?php echo $row['head']  ;  ?></td>
+                          <td><?php echo $row['title']  ;  ?></td>
+                          <td><?php echo $row['text']  ;  ?></td>
+                          <td><img src="<?php echo"images/slider/" .$row['image']  ;  ?>" width="90px" alt="image"></td>
                           <td><label class="badge badge-danger">Edit</label>  
                           <label class="badge badge-danger">Delete</label></td>
                         </tr>
-                       
+                        <?php endwhile; ?>
                       </tbody>
                     </table>
                     <br>
