@@ -7,6 +7,7 @@ $result =$db->query($sql);
 
     <div class="col-lg-10 grid-margin stretch-card">
                 <div class="card">
+                <div class="table-responsive">
                   <div class="card-body">
                     <h4 class="card-title">Home Slider  &  About Edit</h4>
                     <p class="card-description"> Home <code> Slider </code>
@@ -43,6 +44,7 @@ $result =$db->query($sql);
                         <?php endwhile; ?>
                       </tbody>
                     </table>
+                      </div>
                     <br>
 
 
@@ -54,6 +56,7 @@ $result =$db->query($sql);
 ?>                 
                     <p class="card-description"> Home <code> About </code>
                     </p>
+                    <div class="table-responsive">
                     <table class="table table-hover">
                       <thead>
                         <tr>
@@ -75,6 +78,7 @@ $result =$db->query($sql);
                         <?php endwhile; ?>
                       </tbody>
                     </table>
+                    </div>
                   </div>
                 </div>
               </div>

@@ -3,9 +3,8 @@ include "connection.php";
 
     
     $name           =$_POST['name'];
-    $position          =$_POST['position'];
-    $details         =$_POST['details'];
-    
+    $position       =$_POST['position'];
+    $details        =$_POST['details'];
     $image          = $_FILES['image']['name'] ; 
     $target         = "images/slider/".basename($image) ;
 

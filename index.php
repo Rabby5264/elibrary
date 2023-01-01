@@ -162,7 +162,14 @@ $result =$db->query($sql);
   </section>
   <!-- End about us counter -->
 
-  <!-- Start latest course section -->
+  <!-- Start latest books section -->
+
+  <?php 
+include "connection.php"; 
+$sql    ="SELECT * FROM letest_books ORDER BY id DESC";
+$result =$db->query($sql);
+?>
+
   <section id="mu-latest-courses">
     <div class="container">
       <div class="row">
@@ -174,28 +181,29 @@ $result =$db->query($sql);
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio ipsa ea maxime mollitia, vitae voluptates, quod at, saepe reprehenderit totam aliquam architecto fugiat sunt animi!</p>
             </div>
             <!-- End Title -->
-            <!-- Start latest course content -->
+            <!-- Start latest books content -->
+            <?php while($row = $result->fetch_assoc()):   ?>
             <div id="mu-latest-course-slide" class="mu-latest-courses-content">
               <div class="col-lg-4 col-md-4 col-xs-12">
                 <div class="mu-latest-course-single">
                   <figure class="mu-latest-course-img">
-                    <a href="#"><img src="assets/img/courses/1.jpg" alt="img"></a>
+                    <a href="#"><img src="<?php echo"admin/images/slider/" .$row['image']  ;  ?>" height="400px" alt="image"></a>
                     <figcaption class="mu-latest-course-imgcaption">
-                      <a href="#">Drawing</a>
+                      <a href="#"><?php echo $row['author_name']; ?></a>
                       <span><i class="fa fa-clock-o"></i>90Days</span>
                     </figcaption>
                   </figure>
                   <div class="mu-latest-course-single-content">
-                    <h4><a href="#">Lorem ipsum dolor sit amet.</a></h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet quod nisi quisquam modi dolore, dicta obcaecati architecto quidem ullam quia.</p>
+                    <h4><a href="#"><?php echo $row['book_name']; ?></a></h4>
+                    <p><?php echo $row['details']; ?></p>
                     <div class="mu-latest-course-single-contbottom">
-                      <a class="mu-course-details" href="#">Details</a>
-                      <span class="mu-course-price" href="#">$165.00</span>
+                      <a class="mu-course-details" href="#">Download</a>
+                      <span class="mu-course-price" href="#">Read</span>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="col-lg-4 col-md-4 col-xs-12">
+              <!-- <div class="col-lg-4 col-md-4 col-xs-12">
                 <div class="mu-latest-course-single">
                   <figure class="mu-latest-course-img">
                     <a href="#"><img src="assets/img/courses/2.jpg" alt="img"></a>
@@ -289,8 +297,9 @@ $result =$db->query($sql);
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
+              </div> -->
+            </div>    <?php endwhile; ?>
+
             <!-- End latest course content -->
           </div>
         </div>
@@ -298,6 +307,12 @@ $result =$db->query($sql);
     </div>
   </section>
   <!-- End latest course section -->
+
+  <?php 
+include "connection.php"; 
+$sql    ="SELECT * FROM founder ORDER BY id DESC";
+$result =$db->query($sql);
+?>
 
   <!-- Start our teacher -->
   <section id="mu-our-teacher">
@@ -312,12 +327,13 @@ $result =$db->query($sql);
             </div>
             <!-- end title -->
             <!-- begain our teacher content -->
+            <?php while($row = $result->fetch_assoc()):   ?>
             <div class="mu-our-teacher-content">
               <div class="row">
                 <div class="col-lg-3 col-md-3  col-sm-6">
                   <div class="mu-our-teacher-single">
                     <figure class="mu-our-teacher-img">
-                      <img src="assets/img/teachers/teacher-01.png" alt="teacher img">
+                    <img src="<?php echo"admin/images/slider/" .$row['image']  ; ?>" alt="image">
                       <div class="mu-our-teacher-social">
                         <a href="#"><span class="fa fa-facebook"></span></a>
                         <a href="#"><span class="fa fa-twitter"></span></a>
@@ -326,13 +342,15 @@ $result =$db->query($sql);
                       </div>
                     </figure>                    
                     <div class="mu-ourteacher-single-content">
-                      <h4>Brian Dean</h4>
-                      <span>Math Teacher</span>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique quod pariatur recusandae odio dignissimos. Eligendi.</p>
+                      <h4><?php echo $row['name']; ?></h4>
+                      <span><?php echo $row['position']; ?></span>
+                      <p><?php echo $row['details']; ?></p>
                     </div>
                   </div>
                 </div>
-                <div class="col-lg-3 col-md-3 col-sm-6">
+                <?php endwhile; ?>
+
+                <!-- <div class="col-lg-3 col-md-3 col-sm-6">
                   <div class="mu-our-teacher-single">
                     <figure class="mu-our-teacher-img">
                       <img src="assets/img/teachers/teacher-02.png" alt="teacher img">
@@ -385,9 +403,10 @@ $result =$db->query($sql);
                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique quod pariatur recusandae odio dignissimos. Eligendi.</p>
                     </div>
                   </div>
-                </div>
+                </div> -->
               </div>
             </div> 
+
             <!-- End our teacher content -->           
           </div>
         </div>
@@ -401,4 +420,3 @@ $result =$db->query($sql);
   <!-- End testimonial -->
 
   <?php include 'include/footer.php'; ?>
-

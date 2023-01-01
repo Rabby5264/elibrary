@@ -34,8 +34,10 @@ $result =$db->query($sql);
                           <td><?php echo $row['name']; ?></td>
                           <td><?php echo $row['position']; ?></td>
                           <td><?php echo $row['details']; ?></td>
-                          <td><label class="badge badge-info">Delete</label>      
-                          <label class="badge badge-info">Edit</label></td>
+                          <td class="text-center">
+                          <a href="edit_about.php?id=<?php echo $row['id']; ?>" class="btn btn-primary">Edit</a>
+                          <a href="delete_admin.php?id=<?php echo $row['id']; ?>" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this user?')">Delete</a>
+                          </td>
                         </tr>
                         <?php endwhile; ?>
 
