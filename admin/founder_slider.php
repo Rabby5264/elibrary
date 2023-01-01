@@ -1,4 +1,10 @@
-<?php include 'include/header.php'; ?>
+<?php include 'include/header.php'; 
+include "connection.php"; 
+$sql    ="SELECT * FROM founder ORDER BY id DESC";
+$result =$db->query($sql);
+?>
+
+
         <div class="col-lg-10 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
@@ -13,7 +19,6 @@
                     <table class="table table-striped">
                       <thead>
                         <tr>
-                          <th> ID </th>
                           <th> Image </th>
                           <th> Name </th>
                           <th> Position </th>
@@ -22,19 +27,18 @@
                         </tr>
                       </thead>
                       <tbody>
+                      <?php while($row = $result->fetch_assoc()):   ?>
 
                         <tr>
-                          <td> Herman Beck </td>
-                          <td class="py-1">
-                            <img src="assets/images/faces-clipart/pic-1.png" alt="image" />
-                          </td>
-                          <td> Herman Beck </td>
-                          <td> Herman Beck </td>
-                          <td> Herman Beck </td>
+                          <td><img src="<?php echo"images/slider/" .$row['image']  ;  ?>" width="90px" alt="image"></td>
+                          <td><?php echo $row['name']; ?></td>
+                          <td><?php echo $row['position']; ?></td>
+                          <td><?php echo $row['details']; ?></td>
                           <td><label class="badge badge-info">Delete</label>      
                           <label class="badge badge-info">Edit</label></td>
                         </tr>
-                        
+                        <?php endwhile; ?>
+
                       </tbody>
                     </table>
                   </div>

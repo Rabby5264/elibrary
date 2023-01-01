@@ -66,12 +66,19 @@ $result =$db->query($sql);
   </section>
   <!-- End service  -->
 
+
+
   <!-- Start about us -->
+  <?php 
+include "connection.php"; 
+$sql    ="SELECT * FROM about ORDER BY id DESC";
+$result =$db->query($sql);
+?>
   <section id="mu-about-us">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <div class="mu-about-us-area">           
+          <!-- <div class="mu-about-us-area">            -->
             <div class="row">
               <div class="col-lg-6 col-md-6">
                 <div class="mu-about-us-left">
@@ -79,23 +86,17 @@ $result =$db->query($sql);
                   <div class="mu-title">
                     <h2>About Us</h2>              
                   </div>
+                  <?php while($row = $result->fetch_assoc()):   ?>
                   <!-- End Title -->
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum pariatur fuga eveniet soluta aspernatur rem, nam voluptatibus voluptate voluptates sapiente, inventore. Voluptatem, maiores esse molestiae.</p>
-                  <ul>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
-                    <li>Saepe a minima quod iste libero rerum dicta!</li>
-                    <li>Voluptas obcaecati, iste porro fugit soluta consequuntur. Veritatis?</li>
-                    <li>Ipsam deserunt numquam ad error rem unde, omnis.</li>
-                    <li>Repellat assumenda adipisci pariatur ipsam eos similique, explicabo.</li>
-                  </ul>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis quaerat harum facilis excepturi et? Mollitia!</p>
+                  <h3><?php echo $row['text']  ;  ?></h3>
+                 
                 </div>
               </div>
               <div class="col-lg-6 col-md-6">
                 <div class="mu-about-us-right">                            
-                <a id="mu-abtus-video" href="https://www.youtube.com/embed/HN3pm9qYAUs" target="mutube-video">
-                  <img src="assets/img/about-us.jpg" alt="img">
-                </a>                
+                <img src="<?php echo"admin/images/slider/" .$row['image']  ;  ?>" height="50%" width="70%" alt="image">
+                <?php endwhile; ?>
+               
                 </div>
               </div>
             </div>
@@ -105,6 +106,10 @@ $result =$db->query($sql);
     </div>
   </section>
   <!-- End about us -->
+
+
+
+
 
   <!-- Start about us counter -->
   <section id="mu-abtus-counter">

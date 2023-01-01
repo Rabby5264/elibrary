@@ -13701,9 +13701,9 @@ dl {
     border-color: #ebedf2; }
 
 .auth .brand-logo {
-  margin-bottom: 2rem; }
+  margin-bottom: 1rem; }
   .auth .brand-logo img {
-    width: 150px; }
+    width: 50px; }
 
 .auth form .form-group {
   margin-bottom: 1.5rem; }

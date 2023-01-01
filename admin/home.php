@@ -35,8 +35,10 @@ $result =$db->query($sql);
                           <td><?php echo $row['title']  ;  ?></td>
                           <td><?php echo $row['text']  ;  ?></td>
                           <td><img src="<?php echo"images/slider/" .$row['image']  ;  ?>" width="90px" alt="image"></td>
-                          <td><label class="badge badge-danger">Edit</label>  
-                          <label class="badge badge-danger">Delete</label></td>
+                          <td>
+                            <a href="edit_about.php?id=<?php echo $row['id']; ?>" class="btn btn-primary">Edit</a>
+                            <a href="delete_admin.php?id=<?php echo $row['id']; ?>" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this user?')">Delete</a>
+                          </td>
                         </tr>
                         <?php endwhile; ?>
                       </tbody>
@@ -65,7 +67,10 @@ $result =$db->query($sql);
                         <tr>
                           <td><?php echo $row['text']  ;  ?></td>
                           <td><img src="<?php echo"images/slider/" .$row['image']  ;  ?>" width="90px" alt="image"></td>
-                          <td><a href="edit_about.php"><label class="badge badge-danger">Edit</label></a></td>
+                          <td>
+                            <a href="edit_about.php?id=<?php echo $row['id']; ?>" class="btn btn-primary">Edit</a>
+                            <a href="delete_admin.php?id=<?php echo $row['id']; ?>" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this user?')">Delete</a>
+                          </td>
                         </tr>
                         <?php endwhile; ?>
                       </tbody>

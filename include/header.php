@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">    
-    <title>Varsity | Home</title>
+    <title> National library</title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
@@ -99,7 +99,9 @@
           </button>
           <!-- LOGO -->              
           <!-- TEXT BASED LOGO -->
-          <a class="navbar-brand" href="index.php"><i class="fa fa-university"></i><span>Varsity</span></a>
+          <a class="navbar-brand" href="index.php">
+            <i class="fa fa-university"></i><span>National library</span>
+          </a>
           <!-- IMG BASED LOGO  -->
           <!-- <a class="navbar-brand" href="index.php"><img src="assets/img/logo.png" alt="logo"></a> -->
         </div>
