@@ -23,7 +23,7 @@ if($result){
 }
 
 
-else{echo"Data Inser Fail !";}
+else{echo"Data Insert Fail !";}
 
 
 

@@ -38,7 +38,7 @@ $result =$db->query($sql);
                           <td><img src="<?php echo"images/slider/" .$row['image']  ;  ?>" width="90px" alt="image"></td>
                           <td> <a href="uploads/files/<?php echo $row['file']; ?>"><?php echo $row['file']; ?></a> </td>
                           <td class="text-center">
-                          <a href="edit_about.php?id=<?php echo $row['id']; ?>" class="btn btn-primary">Edit</a>
+                          <a href="edit_letest_book.php?id=<?php echo $row['id']; ?>" class="btn btn-primary">Edit</a>
                           <a href="delete_letest_books.php?id=<?php echo $row['id']; ?>" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this user?')">Delete</a>
                           </td>
                         </tr>

@@ -17,6 +17,7 @@ $result =$db->query($sql);
                     <i class="mdi mdi-book-open-page-variant">
                       Add New Slider
                     </i></button></a>
+                    <div class="table-responsive">
                     <table class="table table-hover">
                       <thead>
                         <tr>
@@ -44,7 +45,9 @@ $result =$db->query($sql);
                         <?php endwhile; ?>
                       </tbody>
                     </table>
-                      </div>
+                    </div>
+                    </div>
+
                     <br>
 
 
