@@ -16,6 +16,7 @@ $result =$db->query($sql);
                     <i class="mdi mdi-book-open-page-variant">
                       Add New 
                     </i></button></a>
+                    <div class="table-responsive">
                     <table class="table table-hover">
                       <thead>
                       <tr class="text-info text-center">
@@ -45,6 +46,7 @@ $result =$db->query($sql);
                         <?php endwhile; ?>
                       </tbody>
                     </table>
+                    </div>
                   </div>
                 </div>
               </div>

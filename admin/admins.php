@@ -28,7 +28,7 @@ $result =$db->query($sql);
                           <td><?php echo $row['email']  ;  ?></td>
                           <td><?php echo $row['mobile']  ;  ?></td>
                           <td>
-                            <a href="admin_edit.php?id=<?php echo $row['id']; ?>" class="btn btn-primary">Edit</a>
+                            <a href="edit_admin.php?id=<?php echo $row['id']; ?>" class="btn btn-primary">Edit</a>
                             <a href="delete_admin.php?id=<?php echo $row['id']; ?>" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this user?')">Delete</a>
                           </td>
                         </tr>

@@ -1,14 +1,14 @@
 <?php
 include "connection.php";
 
-    
-    $text         =$_POST['text'];
-    $image          = $_FILES['image']['name'] ; 
-    $target         = "images/slider/".basename($image) ;
+    $id                 =$_POST['id'];
+    $text               =$_POST['text'];
+    $image              = $_FILES['image']['name'] ; 
+    $target             = "images/slider/".basename($image) ;
 
 
 
-$sql="INSERT INTO about (text,image) VALUES ('$text','$image')";
+$sql="UPDATE about SET text='$text',image='$image' WHERE id='$id' ";
 
 $result=$db->query($sql);
 

@@ -1,9 +1,5 @@
 
-<?php
-
-if(isset($_SESSION['id'])):
-
-include 'include/header.php'; ?>
+<?php include 'include/header.php'; ?>
 
         <div class="col-md-10 grid-margin stretch-card">
                 <div class="card">
@@ -52,11 +48,4 @@ include 'include/header.php'; ?>
                 </div>
               </div>
 
-    <?php
-
-else:
-  header('Location:login.php');
-
-    endif;
-    
-    include 'include/footer.php'; ?>
+    <?php include 'include/footer.php'; ?>

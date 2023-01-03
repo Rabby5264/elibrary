@@ -38,7 +38,7 @@ $result =$db->query($sql);
                           <td><?php echo $row['text']  ;  ?></td>
                           <td><img src="<?php echo"images/slider/" .$row['image']  ;  ?>" width="90px" alt="image"></td>
                           <td>
-                            <a href="edit_about.php?id=<?php echo $row['id']; ?>" class="btn btn-primary">Edit</a>
+                            <a href="edit_home_slider.php?id=<?php echo $row['id']; ?>" class="btn btn-primary">Edit</a>
                             <a href="delete_admin.php?id=<?php echo $row['id']; ?>" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this user?')">Delete</a>
                           </td>
                         </tr>
@@ -63,20 +63,21 @@ $result =$db->query($sql);
                     <table class="table table-hover">
                       <thead>
                         <tr>
-                          <th>About us</th>
-                          <th>File</th>
-                          <th>Status</th>
+                          <th>Action</th>
+                          <th>Image</th>
+                          <th>About Us Text</th>
                         </tr>
                       </thead>
                       <?php while($row = $result->fetch_assoc()):   ?>
                       <tbody>
                         <tr>
-                          <td><?php echo $row['text']  ;  ?></td>
-                          <td><img src="<?php echo"images/slider/" .$row['image']  ;  ?>" width="90px" alt="image"></td>
                           <td>
                             <a href="edit_about.php?id=<?php echo $row['id']; ?>" class="btn btn-primary">Edit</a>
-                            <a href="delete_admin.php?id=<?php echo $row['id']; ?>" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this user?')">Delete</a>
+                            <!-- <a href="delete_admin.php?id=<?php echo $row['id']; ?>" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this user?')">Delete</a> -->
                           </td>
+                          <td><img src="<?php echo"images/slider/" .$row['image']  ;  ?>" width="90px" alt="image"></td>
+                          <td><?php echo $row['text']  ;  ?></td>
+
                         </tr>
                         <?php endwhile; ?>
                       </tbody>

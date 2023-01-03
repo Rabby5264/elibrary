@@ -1,5 +1,8 @@
 
   <?php include 'include/header.php'; ?>
+
+
+
   <div class="container" id="container">
   <div class=" login-wrap" >
 	<br><br><br><br><br>
@@ -9,8 +12,8 @@
 		<div class="login-form">
 			<div class="sign-in-htm">
 				<div class="group">
-					<label for="user" class="label">Username</label>
-					<input id="user" type="text" class="input">
+					<label for="user" class="label">Email</label>
+					<input id="user" type="text" name="" class="input">
 				</div>
 				<div class="group">
 					<label for="pass" class="label">Password</label>
@@ -21,38 +24,48 @@
 					<label for="check"><span class="icon"></span> Keep me Signed in</label>
 				</div>
 				<div class="group">
-					<input type="submit" class="button" value="Sign In">
+				<button type="submit" class="button">Login</button>
 				</div>
 				<div class="hr"></div>
 				<div class="foot-lnk">
 					<a href="#forgot">Forgot Password?</a>
 				</div>
 			</div>
+			<!-- login end -->
+
+
+
+
+			<!-- sign up  -->
+			<form action="registration_insetr.php" method="POST">
 			<div class="sign-up-htm">
 				<div class="group">
 					<label for="user" class="label">Username</label>
-					<input id="user" type="text" class="input">
+					<input id="user" type="text" name="name" class="input">
 				</div>
 				<div class="group">
 					<label for="pass" class="label">Password</label>
-					<input id="pass" type="password" class="input" data-type="password">
+					<input id="pass" type="password" name="password" class="input" data-type="password">
 				</div>
 				<div class="group">
 					<label for="pass" class="label">Repeat Password</label>
-					<input id="pass" type="password" class="input" data-type="password">
+					<input id="pass" type="password" name="password" class="input" data-type="password">
 				</div>
 				<div class="group">
 					<label for="pass" class="label">Email Address</label>
-					<input id="pass" type="text" class="input">
+					<input id="pass" type="text" name="email" class="input">
 				</div>
 				<div class="group">
-					<input type="submit" class="button" value="Sign Up">
+				<button type="submit" class="button">Submit</button>
+
+					<!-- <input type="submit" class="button" value="Sign Up"> -->
 				</div>
 				<div class="hr"></div>
 				<div class="foot-lnk">
 					<label for="tab-1">Already Member?</a>
 				</div>
 			</div>
+			</form>
 		</div>
 	</div>
 </div>

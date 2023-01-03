@@ -2,6 +2,7 @@
 include "connection.php"; 
 $sql    ="SELECT * FROM books ORDER BY id DESC";
 $result =$db->query($sql);
+$result1 =$db->query($sql);
 ?>
 
 
@@ -38,7 +39,7 @@ $result =$db->query($sql);
                     <div class="col-md-6 col-sm-6">
                     <div class="mu-latest-course-single">
                       <figure class="mu-latest-course-img">
-                        <a href="#"><img src="assets/img/courses/1.jpg" alt="img"></a>
+                        <a href="#"><img src="<?php echo"admin/images/slider/" .$row['image']  ;  ?>" height="450px" alt="img"></a>
                         <figcaption class="mu-latest-course-imgcaption">
                           <a href="#"><?php echo $row['author_name']; ?></a>
                           <span><i class="fa fa-clock-o"></i>90Days</span>
@@ -184,12 +185,9 @@ $result =$db->query($sql);
                   <div class="mu-single-sidebar">
                     <h3>Categories</h3>
                     <ul class="mu-sidebar-catg">
-                      <li><a href="#">Web Design</a></li>
-                      <li><a href="">Web Development</a></li>
-                      <li><a href="">Science Fiction</a></li>
-                      <li><a href="">Religion</a></li>
-                      <li><a href="">Business</a></li>
-                      <li><a href="">Short Story</a></li>
+                    <?php while($row = $result1->fetch_assoc()):   ?>
+                      <li><a href="category.php?category=<?php echo $row['catagory']; ?>"><?php echo $row['catagory']; ?></a></li>
+                      <?php endwhile; ?>
                     </ul>
                   </div>
                   <!-- end single sidebar -->
@@ -200,34 +198,34 @@ $result =$db->query($sql);
                       <div class="media">
                         <div class="media-left">
                           <a href="#">
-                            <img class="media-object" src="assets/img/courses/1.jpg" alt="img">
+                            <!-- <img class="media-object" src="assets/img/courses/1.jpg" alt="img"> -->
                           </a>
                         </div>
                         <div class="media-body">
-                          <h4 class="media-heading"><a href="#">Medical Science</a></h4>                      
-                          <span class="popular-course-price">$200.00</span>
+                          <h4 class="media-heading"><a href="#">Stay True: A Memoir</a></h4>                      
+                          <span class="popular-course-price">Hua Hsu (Author)</span>
                         </div>
                       </div>
                       <div class="media">
                         <div class="media-left">
                           <a href="#">
-                            <img class="media-object" src="assets/img/courses/2.jpg" alt="img">
+                            <!-- <img class="media-object" src="assets/img/courses/2.jpg" alt="img"> -->
                           </a>
                         </div>
                         <div class="media-body">
-                          <h4 class="media-heading"><a href="#">Web Design</a></h4>                      
-                          <span class="popular-course-price">$250.00</span>
+                          <h4 class="media-heading"><a href="#">Super Good Baking for Kids</a></h4>                      
+                          <span class="popular-course-price">Duff Goldman (Author)</span>
                         </div>
                       </div>
                       <div class="media">
                         <div class="media-left">
                           <a href="#">
-                            <img class="media-object" src="assets/img/courses/3.jpg" alt="img">
+                            <!-- <img class="media-object" src="assets/img/courses/3.jpg" alt="img"> -->
                           </a>
                         </div>
                         <div class="media-body">
-                          <h4 class="media-heading"><a href="#">Health & Sports</a></h4>                      
-                          <span class="popular-course-price">$90.00</span>
+                          <h4 class="media-heading"><a href="#">The Peanuts</a></h4>                      
+                          <span class="popular-course-price">Various Authors (Author)</span>
                         </div>
                       </div>
                     </div>
@@ -237,7 +235,7 @@ $result =$db->query($sql);
                   <div class="mu-single-sidebar">
                     <h3>Author</h3>
                     <ul class="mu-sidebar-catg mu-sidebar-archives">
-                      <li><a href="#">Humayun Ahmed<span>(25)</span></a></li>
+
                       <li><a href="">Humayun Ahmed <span>(35)</span></a></li>
                       <li><a href="">Jahanara Imam <span>(20)</span></a></li>
                       <li><a href="">Taslima Nasrin <span>(125)</span></a></li>

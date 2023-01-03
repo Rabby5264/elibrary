@@ -1,6 +1,8 @@
-
-    <?php include 'include/header.php'; ?>
-
+<?php include 'include/header.php'; 
+include "connection.php"; 
+$sql    ="SELECT * FROM signup ORDER BY id DESC";
+$result =$db->query($sql);
+?>
 
 <div class="col-lg-10 grid-margin stretch-card">
                 <div class="card">
@@ -19,18 +21,21 @@
                         </tr>
                       </thead>
                       <tbody>
-
+                      <?php while($row = $result->fetch_assoc()):   ?>
                         <tr>
-                          <td> 1 </td>
-                          <td> Herman Beck </td>
-                          <td>abcd</td>
-                          <td> $ 77.99 </td>
+                          <td> <?php echo $row['id']  ;  ?> </td>
+                          <td>  <?php echo $row['name']  ;  ?></td>
+                          <td><?php echo $row['email']  ;  ?></td>
+                          <td> <?php echo $row['password']  ;  ?> </td>
                           <td>
-                          <button type="button" class="btn btn-gradient-danger btn-icon-text">
-                            <i class="mdi mdi-alert btn-icon-prepend"></i> Delete </button>
+
+                          <a href="edit_about.php?id=<?php echo $row['id']; ?>" class="btn btn-primary">Edit</a>
+
+                          <a href="student_delete.php?id=<?php echo $row['id']; ?>" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this user?')">Delete</a>
+
                         </td>
                         </tr>
-                        
+                        <?php endwhile; ?>
                       </tbody>
                     </table>
                   </div>

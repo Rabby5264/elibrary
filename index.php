@@ -1,10 +1,15 @@
 <?php 
-include 'include/header.php'; 
-include "connection.php"; 
+  session_start();
+  if($_SESSION['id']):
+  include "connection.php"; 
+include 'include/header.php' 
+
+
+?>
+
+<?php 
 $sql    ="SELECT * FROM home_slider ORDER BY id DESC";
 $result =$db->query($sql);
-
-
 ?>
 
   <!-- Start Slider -->
@@ -48,14 +53,14 @@ $result =$db->query($sql);
             <!-- Start single service -->
             <div class="mu-service-single">
               <span class="fa fa-users"></span>
-              <h3>Expert Teachers</h3>
+              <h3>Happy Students</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima officiis, deleniti dolorem exercitationem praesentium, est!</p>
             </div>
             <!-- Start single service -->
             <!-- Start single service -->
             <div class="mu-service-single">
               <span class="fa fa-table"></span>
-              <h3>Best Classrooms</h3>
+              <h3>Best Library</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima officiis, deleniti dolorem exercitationem praesentium, est!</p>
             </div>
             <!-- Start single service -->
@@ -123,7 +128,7 @@ $result =$db->query($sql);
                 <div class="mu-abtus-counter-single">
                   <span class="fa fa-book"></span>
                   <h4 class="counter">568</h4>
-                  <p>Subjects</p>
+                  <p>Books</p>
                 </div>
               </div>
               <!-- End counter item -->
@@ -150,7 +155,7 @@ $result =$db->query($sql);
                 <div class="mu-abtus-counter-single no-border">
                   <span class="fa fa-user-secret"></span>
                   <h4 class="counter">250</h4>
-                  <p>Teachers</p>
+                  <p>Authors</p>
                 </div>
               </div>
               <!-- End counter item -->
@@ -177,8 +182,8 @@ $result =$db->query($sql);
           <div class="mu-latest-courses-area">
             <!-- Start Title -->
             <div class="mu-title">
-              <h2>Latest Books</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio ipsa ea maxime mollitia, vitae voluptates, quod at, saepe reprehenderit totam aliquam architecto fugiat sunt animi!</p>
+              <h2>trending Books</h2>
+              <p>Our Most Anticipated Books of</p>
             </div>
             <!-- End Title -->
             <!-- Start latest books content -->
@@ -199,7 +204,7 @@ $result =$db->query($sql);
                     <p><?php echo $row['details']; ?></p>
                     <div class="mu-latest-course-single-contbottom">
                       <a class="mu-course-details" href="<?php echo"admin/images/slider/" . $row['file']; ?>">Download</a>
-                      <span class="mu-course-price" href="#">Read</span>
+                      <!-- <span class="mu-course-price" href="#">Read</span> -->
                     </div>
                   </div>
                 </div>
@@ -233,7 +238,7 @@ $result =$db->query($sql);
             <!-- begain title -->
             <div class="mu-title">
               <h2>Founder</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, repudiandae, suscipit repellat minus molestiae ea.</p>
+              <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, repudiandae, suscipit repellat minus molestiae ea.</p> -->
             </div>
             <!-- end title -->
             <!-- begain our teacher content -->
@@ -329,4 +334,10 @@ $result =$db->query($sql);
   
   <!-- End testimonial -->
 
-  <?php include 'include/footer.php'; ?>
+  <?php
+include 'include/footer.php' ;
+else:
+  header("Location:joinus.php");
+
+endif;
+ ?>
