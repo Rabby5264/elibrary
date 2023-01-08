@@ -41,9 +41,8 @@ function getCategoryList(){
                         <input type="text" name="author_name" class="form-control" id="exampleInputName1" placeholder="Name">
                       </div>
                       <div class="form-group">
-                        <label for="exampleInputName1">Catagory</label>
+                        <label for="exampleInputName1" name="category">Catagory</label>
                         <?php echo getCategoryList(); ?>
-                        <input type="text" name="catagory" dropdown="<?php echo"" ?>" class="form-control" id="exampleInputName1" placeholder="Name">
                       </div>
                       <div class="form-group">
                         <label>File upload</label>

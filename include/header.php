@@ -111,7 +111,7 @@
             <li ><a href="books.php">Book List</a></li>
             <li ><a href="books_catagory.php">Category</a></li>
             <li ><a href="contact.php">Contact</a></li>
-            <li ><a href="joinus.php">Join Us</a></li>               
+            <li ><a href="signout.php">Log Out</a></li>               
             <!-- <li><a href="signout.php">Signout</a></li> -->
             <li><a href="#" id="mu-search-icon"><i class="fa fa-search"></i></a></li>
           </ul>                     

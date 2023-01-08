@@ -4,7 +4,7 @@ include "connection.php";
     
     $book_name           =$_POST['book_name'];
     $author_name           =$_POST['author_name'];
-    $catagory          =$_POST['catagory'];
+    $category          =$_POST['category'];
     $details         =$_POST['details'];
     
     $file          = $_FILES['file']['name'] ; 
@@ -15,7 +15,7 @@ include "connection.php";
 
 
 
-$sql="INSERT INTO books (book_name,author_name,catagory,details,file,image) VALUES ('$book_name','$author_name','$catagory','$details','$file','$image')";
+$sql="INSERT INTO books (book_name,author_name,category,details,file,image) VALUES ('$book_name','$author_name','$category','$details','$file','$image')";
 
 $result=$db->query($sql);
 

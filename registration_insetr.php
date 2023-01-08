@@ -3,8 +3,8 @@ include "connection.php";
 
     
     $name           =$_POST['name'];
-    $email          =$_POST['password'];
-    $password       =$_POST['email'];
+    $email          =$_POST['email'];
+    $password       =$_POST['password'];
    
 
 
