@@ -1,4 +1,29 @@
-<?php include 'include/header.php'; ?>
+<?php 
+
+include 'include/header.php'; 
+include 'connection.php'; 
+
+
+function getCategoryList(){
+
+  global $db;
+
+  $sql = "SELECT * FROM category_list";
+  $result = $db->query($sql);
+  $html='<select class="form-control">';
+  while($data = $result->fetch_assoc()){
+    $html.='<option value="'.$data['id'].'">'.$data['name'].'</option>';
+  }
+  $html.='</select>';
+
+  return $html;
+
+}
+
+
+
+
+?>
 
 
 <div class="col-10 grid-margin stretch-card">
@@ -17,7 +42,8 @@
                       </div>
                       <div class="form-group">
                         <label for="exampleInputName1">Catagory</label>
-                        <input type="text" name="catagory" class="form-control" id="exampleInputName1" placeholder="Name">
+                        <?php echo getCategoryList(); ?>
+                        <input type="text" name="catagory" dropdown="<?php echo"" ?>" class="form-control" id="exampleInputName1" placeholder="Name">
                       </div>
                       <div class="form-group">
                         <label>File upload</label>

@@ -218,6 +218,12 @@
               </a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="category_list.php">
+                <span class="menu-title">Category</span>
+                <i class="mdi mdi-format-list-bulleted menu-icon"></i>
+              </a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="letest_books.php">
                 <span class="menu-title">Letest Books</span>
                 <i class="mdi mdi-format-list-bulleted menu-icon"></i>

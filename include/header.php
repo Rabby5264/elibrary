@@ -107,12 +107,12 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul id="top-menu" class="nav navbar-nav navbar-right main-nav">
-            <li class="active"><a href="index.php">Home</a></li>
-            <li class="active"><a href="books.php">Book List</a></li>
-            <li><a href="contact.php">Contact</a></li>
-            <li><a href="joinus.php">Join Us</a></li>               
-            <!-- <li><a href="signout.php">Signout</a></li>                -->
-
+            <li ><a href="index.php">Home</a></li>
+            <li ><a href="books.php">Book List</a></li>
+            <li ><a href="books_catagory.php">Category</a></li>
+            <li ><a href="contact.php">Contact</a></li>
+            <li ><a href="joinus.php">Join Us</a></li>               
+            <!-- <li><a href="signout.php">Signout</a></li> -->
             <li><a href="#" id="mu-search-icon"><i class="fa fa-search"></i></a></li>
           </ul>                     
         </div><!--/.nav-collapse -->        
