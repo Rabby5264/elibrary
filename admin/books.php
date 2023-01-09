@@ -1,11 +1,14 @@
 <?php include 'include/header.php'; 
-include "connection.php"; 
+include 'include/function.php';
+
 $sql    ="SELECT * FROM books ORDER BY id DESC";
 $result =$db->query($sql);
+
+
 ?>
 
 
-    <div class="col-lg-8 stretch-card">
+    <div class="col-lg-10 stretch-card">
                 <div class="card">
                   <div class="card-body">
                     <h4 class="card-title">Books Table</h4>
@@ -34,8 +37,8 @@ $result =$db->query($sql);
                         <tr class="table-info">
                           <td><?php echo $row['book_name']; ?></td>
                           <td><?php echo $row['author_name']; ?></td>
-                          <td><?php echo $row['category']; ?></td>
-                          <td><?php echo $row['details']; ?></td>
+                          <td><?php echo getCategoryNameById($row['category']) ; ?></td>
+                          <td><?php echo  substr($row['details'], 0, 30); ?></td>
                           <td><img src="<?php echo"images/slider/" .$row['image']  ;  ?>" width="90px" alt="image"></td>
                           <td> <a href="uploads/files/<?php echo $row['file']; ?>"><?php echo $row['file']; ?></a> </td>
                           <td class="text-center">

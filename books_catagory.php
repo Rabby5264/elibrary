@@ -6,7 +6,21 @@ include "connection.php";
 $sql    ="SELECT * FROM books WHERE catagory='Bangla Novel'";
 $result =$db->query($sql);
 
-// var_dump($result);
+function getCategoryNameById($id=null){
+
+  global $db ;
+
+  $sql    ="SELECT * FROM category_list WHERE id = '$id' ORDER BY id DESC";
+  
+  $result =$db->query($sql);
+
+  $data= $result->fetch_assoc();
+
+  if($data) return $data['name'];
+
+  return;
+
+}
 
 ?>
 

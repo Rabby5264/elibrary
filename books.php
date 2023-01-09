@@ -3,6 +3,27 @@ include "connection.php";
 $sql    ="SELECT * FROM books ORDER BY id DESC";
 $result =$db->query($sql);
 $result1 =$db->query($sql);
+
+
+
+function getCategoryNameById($id=null){
+
+  global $db ;
+
+  $sql    ="SELECT * FROM category_list WHERE id = '$id' ORDER BY id DESC";
+  
+  $result =$db->query($sql);
+
+  $data= $result->fetch_assoc();
+
+  if($data) return $data['name'];
+
+  return;
+
+}
+
+
+
 ?>
 
 
@@ -186,7 +207,7 @@ $result1 =$db->query($sql);
                     <h3>Categories</h3>
                     <ul class="mu-sidebar-catg">
                     <?php while($row = $result1->fetch_assoc()):   ?>
-                      <li><a href="category.php?category=<?php echo $row['catagory']; ?>"><?php echo $row['catagory']; ?></a></li>
+                      <li><a href="category.php?category=<?php echo $row['category']; ?>"><?php echo getCategoryNameById($row['category']) ; ?></a></li>
                       <?php endwhile; ?>
                     </ul>
                   </div>

@@ -10,7 +10,7 @@ function getCategoryList(){
 
   $sql = "SELECT * FROM category_list";
   $result = $db->query($sql);
-  $html='<select class="form-control">';
+  $html='<select name="category" class="form-control">';
   while($data = $result->fetch_assoc()){
     $html.='<option value="'.$data['id'].'">'.$data['name'].'</option>';
   }

@@ -109,7 +109,7 @@
           <ul id="top-menu" class="nav navbar-nav navbar-right main-nav">
             <li ><a href="index.php">Home</a></li>
             <li ><a href="books.php">Book List</a></li>
-            <li ><a href="books_catagory.php">Category</a></li>
+            <li ><a href="book_by_category.php">Category</a></li>
             <li ><a href="contact.php">Contact</a></li>
             <li ><a href="signout.php">Log Out</a></li>               
             <!-- <li><a href="signout.php">Signout</a></li> -->

@@ -4,6 +4,39 @@
     $sql = "SELECT * FROM books WHERE id='$id'";
     $result = $db->query($sql);
     $data = $result->fetch_assoc();
+
+
+    function getCategoryList($id=null){
+
+      global $db;
+    
+      $sql = "SELECT * FROM category_list";
+      $result = $db->query($sql);
+      $html='<select name="category" class="form-control">';
+
+      $debug =123;
+
+      while($data = $result->fetch_assoc()){
+        if($id){
+
+          if($data['id'] == $id)
+            $html.='<option value="'.$data['id'].'" selected>'.$data['name'].'</option>';
+          
+            if($data['id'] != $id)
+          $html.='<option value="'.$data['id'].'">'.$data['name'].'</option>';
+  
+        }else{
+          $html.='<option value="'.$data['id'].'">'.$data['name'].'</option>';
+        }
+      }
+      $html.='</select>';
+    
+      return $html;
+    
+    }
+    
+
+
  ?>
 
 <div class="col-10 grid-margin stretch-card">
@@ -24,7 +57,7 @@
                       </div>
                       <div class="form-group">
                         <label for="exampleInputName1">Catagory</label>
-                        <input type="text" name="catagory" value="<?php echo $data['catagory'] ; ?>" class="form-control" id="exampleInputName1" placeholder="Name">
+                        <?php echo getCategoryList($data['category']) ; ?>
                       </div>
                       <div class="form-group">
                         <label>File upload</label>
