@@ -15,9 +15,9 @@ $result=$db->query($sql);
 if($result){
 
     if( move_uploaded_file($_FILES['image']['tmp_name'] , $target))
-    // {
-    //     header('Location:home.php') ;
-    // }
+    {
+        header('Location:home.php') ;
+    }
     echo 'data insert success';
    
 }

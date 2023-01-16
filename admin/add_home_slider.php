@@ -4,8 +4,8 @@
 <div class="col-10 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">Add Letest book</h4>
-                    <p class="card-description"> Letest Book <code>slider</code></p> 
+                    <h4 class="card-title">Add Slider</h4>
+                    <p class="card-description"> Letest <code>slider</code></p> 
 
                     <form class="forms-sample" method="POST" action="home_slider_insert.php" enctype="multipart/form-data">
                       <div class="form-group">

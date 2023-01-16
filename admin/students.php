@@ -31,7 +31,7 @@ $result =$db->query($sql);
 
                           <a href="edit_about.php?id=<?php echo $row['id']; ?>" class="btn btn-primary">Edit</a>
 
-                          <a href="student_delete.php?id=<?php echo $row['id']; ?>" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this user?')">Delete</a>
+                          <a href="delete_student.php?id=<?php echo $row['id']; ?>" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this user?')">Delete</a>
 
                         </td>
                         </tr>

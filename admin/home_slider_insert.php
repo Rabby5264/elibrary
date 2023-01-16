@@ -21,7 +21,7 @@ if($result){
     {
         header('Location:home.php') ;
     }
-    echo 'data insert success';
+    // echo 'data insert success';
    
 }
 

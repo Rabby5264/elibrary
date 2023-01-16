@@ -12,7 +12,7 @@ function getBookByCat($category){
     $resultCat = $db->query($sqlCat);
     $html ='';
     while($row = $resultCat->fetch_assoc()){
-        $html.='<p>'.$row['book_name'].'</p>';
+        $html.='<a>'.$row['book_name'].'</a>';
     }
     return $html;
 }
@@ -27,6 +27,8 @@ function getBookByCat($category){
 
 
 <?php endwhile; ?>
+
+
 
 
 <?php include 'include/footer.php' ;?>
